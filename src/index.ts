@@ -54,11 +54,11 @@ export default function VueConfigurableRouter(options: Options = {}): PluginOpti
   return {
     name: 'vite-plugin-vue-configurable-router',
     resolveId(id) {
-      if (id === 'vite-plugin-vue-configurable-router/runtime')
+      if (id === 'virtual:vite-plugin-vue-configurable-router/runtime')
         return id
     },
     load(id) {
-      if (id === 'vite-plugin-vue-configurable-router/runtime') {
+      if (id === 'virtual:vite-plugin-vue-configurable-router/runtime') {
         return `export function getRoutes() {
           return ${routesString}
         }`

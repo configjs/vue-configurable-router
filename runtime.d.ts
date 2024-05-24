@@ -1,4 +1,4 @@
-declare module 'vite-plugin-vue-configurable-router/runtime' {
+declare module 'virtual:vite-plugin-vue-configurable-router/runtime' {
   import type { RouteRecordRaw } from 'vue-router'
 
   /** Get routes in runtime. */
