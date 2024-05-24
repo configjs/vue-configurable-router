@@ -15,7 +15,8 @@
     "./runtime": "./runtime.d.ts"
   },
   "files": [
-    "dist"
+    "dist",
+    "runtime.d.ts"
   ],
   "scripts": {
     "build": "tsup",
@@ -37,6 +38,7 @@
     "@commitlint/types": "^17.8.1",
     "@types/node": "^20.11.30",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "bumpp": "^9.4.1",
     "eslint": "^8.57.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.2",
