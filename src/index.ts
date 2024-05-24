@@ -58,7 +58,7 @@ export default function VueConfigurableRouter(options: Options = {}): PluginOpti
         return id
     },
     load(id) {
-      if (id === 'virtual:uncli') {
+      if (id === 'vue-configurable-router/runtime') {
         return `export function getRoutes() {
           return ${routesString}
         }`
