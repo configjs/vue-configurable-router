@@ -13,7 +13,11 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./runtime": "./runtime.d.ts"
+    "./runtime": {
+      "types": "./runtime.d.ts",
+      "import": "./dist/runtime.js",
+      "require": "./dist/runtime.cjs"
+    }
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
