@@ -1,0 +1,52 @@
+{
+  "name": "vite-plugin-vue-configurable-router",
+  "type": "module",
+  "packageManager": "pnpm@8.8.0",
+  "author": "Naily <zero@naily.cc>",
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./dist/index.d.ts",
+        "require": "./dist/index.d.cts"
+      },
+      "import": "./src/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./runtime": "./runtime.d.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint . --fix",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
+  },
+  "dependencies": {
+    "tsup": "^8.0.2",
+    "vite": "^5.2.11",
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.2"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.16.1",
+    "@changesets/cli": "^2.27.1",
+    "@commitlint/cli": "^17.8.1",
+    "@commitlint/config-conventional": "^17.8.1",
+    "@commitlint/types": "^17.8.1",
+    "@types/node": "^20.11.30",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "eslint": "^8.57.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.2",
+    "typescript": "^5.4.2",
+    "vitest": "^1.4.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,vue,json,scss,less,html}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}
