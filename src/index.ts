@@ -5,6 +5,10 @@ export type Route = Omit<RouteRecordRaw, 'component'> & {
   component: string
 }
 
+export interface Options {
+  routes?: Route[]
+}
+
 export function generateRoutesString(routes: Route[]): string {
   function stringify(value: any): string | undefined {
     // 处理字符串
@@ -44,8 +48,8 @@ export function generateRoutesString(routes: Route[]): string {
   return stringify(routes) as any
 }
 
-export default function VueConfigurableRouter(routes: Route[]): PluginOption {
-  const routesString = generateRoutesString(routes)
+export default function VueConfigurableRouter(options: Options = {}): PluginOption {
+  const routesString = generateRoutesString(options && options.routes || [])
 
   return {
     name: 'vite-plugin-vue-configurable-router',
