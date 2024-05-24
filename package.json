@@ -21,6 +21,7 @@
   ],
   "scripts": {
     "build": "tsup",
+    "release": "bumpp && pnpm publish",
     "lint": "eslint . --fix",
     "prepare": "husky install",
     "lint-staged": "lint-staged"
