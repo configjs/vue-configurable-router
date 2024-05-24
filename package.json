@@ -10,7 +10,7 @@
         "import": "./dist/index.d.ts",
         "require": "./dist/index.d.cts"
       },
-      "import": "./src/index.js",
+      "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
     "./runtime": "./runtime.d.ts"
