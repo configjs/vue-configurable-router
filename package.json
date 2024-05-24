@@ -21,7 +21,7 @@
   ],
   "scripts": {
     "build": "tsup",
-    "release": "bumpp && pnpm publish",
+    "release": "tsup && bumpp && pnpm publish",
     "lint": "eslint . --fix",
     "prepare": "husky install",
     "lint-staged": "lint-staged"
@@ -49,8 +49,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,md,vue,json,scss,less,html}": [
-      "eslint --fix",
-      "prettier --write"
+      "eslint . --fix"
     ]
   }
 }

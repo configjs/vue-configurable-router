@@ -49,7 +49,7 @@ export function generateRoutesString(routes: Route[]): string {
 }
 
 export default function VueConfigurableRouter(options: Options = {}): PluginOption {
-  const routesString = generateRoutesString(options && options.routes || [])
+  const routesString = generateRoutesString((options && options.routes ? options.routes : []) || [])
 
   return {
     name: 'vite-plugin-vue-configurable-router',
