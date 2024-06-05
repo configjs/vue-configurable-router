@@ -2,10 +2,20 @@ import type { PluginOption } from 'vite'
 import type { RouteRecordRaw } from 'vue-router'
 
 export type Route = Omit<RouteRecordRaw, 'component'> & {
+  /**
+   * Component to display when the URL matches this route.
+   *
+   * Different from the original `component` property, this property must be a string of the path to the vue component file.
+   *
+   * This is because the original `component` property is not serializable.
+   *
+   * In the runtime, the `component` property will be replaced with a function that dynamically imports the component.
+   */
   component: string
 }
 
 export interface Options {
+  /** The routes to be used in the vue router. */
   routes?: Route[]
 }
 
@@ -45,11 +55,11 @@ export function generateRoutesString(routes: Route[]): string {
     // 处理 undefined 和函数
     return undefined
   }
-  return stringify(routes) as any
+  return stringify(routes)
 }
 
 export default function VueConfigurableRouter(options: Options = {}): PluginOption {
-  const routesString = generateRoutesString((options && options.routes ? options.routes : []) || [])
+  const routesString = generateRoutesString(((options && options.routes) ? options.routes : []) || [])
 
   return {
     name: 'vite-plugin-vue-configurable-router',

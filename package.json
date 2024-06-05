@@ -1,9 +1,26 @@
 {
   "name": "vite-plugin-vue-configurable-router",
   "type": "module",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "packageManager": "pnpm@8.8.0",
+  "description": "A vite plugin for vue3 to generate configurable router",
   "author": "Naily <zero@naily.cc>",
+  "license": "MIT",
+  "homepage": "https://github.com/configjs/vite-plugin-vue-configurable-router#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+github.com:configjs/vite-plugin-vue-configurable-router.git"
+  },
+  "bugs": {
+    "email": "zero@naily.cc",
+    "url": "https://github.com/configjs/vite-plugin-vue-configurable-router/issues"
+  },
+  "keywords": [
+    "vite",
+    "vue",
+    "vue-router",
+    "plugin"
+  ],
   "exports": {
     ".": {
       "types": {
