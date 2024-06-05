@@ -27,6 +27,9 @@
   ],
   "scripts": {
     "build": "tsup",
+    "dev": "pnpm -F base dev",
+    "dev:build": "pnpm -F base build",
+    "dev:preview": "pnpm -F base preview",
     "release": "tsup && bumpp && pnpm publish",
     "lint": "eslint . --fix",
     "prepare": "husky install",
