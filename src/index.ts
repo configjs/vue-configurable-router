@@ -19,7 +19,18 @@ export interface Options {
   routes?: Route[]
 }
 
-export function generateRoutesString(routes: Route[]): string {
+/**
+ * Generate a string that represents the routes.
+ *
+ * @author Zero <zero@naily.cc>
+ * @export
+ * @template ComponentField
+ * @param {Route[]} routes The routes to be used in the vue router.
+ * @param {ComponentField} [componentField]
+ * @return {string} The string that represents the routes.
+ */
+export function generateRoutesString<ComponentField extends string>(routes: Route[], componentField?: ComponentField): string
+export function generateRoutesString(routes: Route[], componentField: string = 'component'): string {
   function stringify(value: any): string | undefined {
     // 处理字符串
     if (typeof value === 'string')
@@ -45,7 +56,8 @@ export function generateRoutesString(routes: Route[]): string {
       const objectElements = objectKeys.map((key) => {
         const keyValue = stringify(value[key])
         if (keyValue !== undefined)
-          return `"${key}":${key !== 'component' ? keyValue : `() => import(${keyValue})`}`
+          // 如果是 component 字段，则返回一个函数
+          return `"${key}":${key !== componentField ? keyValue : `() => import(${keyValue})`}`
 
         return undefined
       }).filter(element => element !== undefined)
