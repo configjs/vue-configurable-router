@@ -1,7 +1,7 @@
 import type { PluginOption } from 'vite'
 import type { RouteRecordRaw } from 'vue-router'
 
-export type Route = Omit<RouteRecordRaw, 'component'> & {
+export type Route = Omit<RouteRecordRaw, 'component' | 'children'> & {
   /**
    * Component to display when the URL matches this route.
    *
@@ -12,6 +12,10 @@ export type Route = Omit<RouteRecordRaw, 'component'> & {
    * In the runtime, the `component` property will be replaced with a function that dynamically imports the component.
    */
   component: string
+  /**
+   * An array of nested route objects.
+   */
+  children?: Route[]
 }
 
 export interface Options {
